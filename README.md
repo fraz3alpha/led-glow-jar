@@ -16,11 +16,11 @@ The single 18650 Li-ion battery gave around 7 hours of use. I forgot to time how
 
 This project came together in a short space of time before the hard deadline of being given as a present for Christmas, and was only really kickstarted when I spotted a nice Jar to use in IKEA.
 
-This would be combined with an 18650 battery to provide power (and not require it to be pluggin in continuously), an ESP8266 ESP-01 board (which is nice and small, WiFi a bonus), WS2801 LEDs (aka 'NeoPixels'), and a 3D printed insert for the jar.
+This would be combined with an 18650 battery to provide power (and not require it to be plugged in continuously), an ESP8266 ESP-01 board (which is nice and small, WiFi a bonus), WS2801 LEDs (aka 'NeoPixels'), and a 3D printed insert for the jar.
 
 ### Prototype
 
-I started with the rough idea I'd had a column of LEDs in the middle of a jar, so I came back from IKEA with one of these:
+I started with the rough idea I'd had a column of LEDs in the middle of a jar, so I came back from [IKEA with one of these jars](http://www.ikea.com/gb/en/products/cookware/food-storage-organising/droppar-jar-with-lid-frosted-glass-stainless-steel-art-80112541/):
 
 ![IKEA Jar website page](images/jar/ikea-jar.png)
 
@@ -57,7 +57,7 @@ So here is those parts soldered together, ready to receive some control circuitr
 
 ![All the power parts wired to the LEDs](images/prototype/prototype-02-leds-with-battery.jpg)
 
-Next up was the ESP8266 based control circuit. It would receive a regulated 3.3v from the battery, and provide a data signal to the LEDs - which would be directly powered from the battery. There might appear to be a lot of wires here, but really it is just the bits needed to program the ESP-01 board (which needs two external switches attached, along with an USB>Serial converted), and the 3.3v regulator at the far end.
+Next up was the ESP8266 based control circuit. It would receive a regulated 3.3v from the battery, and provide a data signal to the LEDs - which would be directly powered from the battery. There might appear to be a lot of wires here, but really it is just the bits needed to program the ESP-01 board (which needs two external switches attached, along with an USB>Serial converter), and the 3.3v regulator at the far end.
 
 ![Control circuitry](images/prototype/prototype-08-control-circuits.jpg)
 
@@ -90,11 +90,11 @@ Here is the top section, which has the switch and PCB inserted in:
 
 The exactly dimensioned holds for the switch and PCB stopped them moving, but it did take two attempts to print this part so that they fit in properly - the curved corners of the recess as a result of the 3D printer's movement meant the PCB didn't fit in the first time, so I made things a little bigger for version 2.
 
-And here we have the battery in the hollowed out main section. Perhaps a little more snug than I would have liked, but it's in :) Also show, the top cap that the switch and USB socket poke through
+And here we have the battery in the hollowed out main section. Perhaps a little more snug than I would have liked, but it's in :) Also shown, the top cap that the switch and USB socket poke through
 
 ![Battery fits in](images/prototype/prototype-09-battery-in.jpg)
 
-I haven't mentioned it thus far, but by now I had some code written in the Arduino IDE for the ESP board to flash the LEDs in various patterns to check everything worked. The code uses the [Adafruit_NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel), which just works, so why re-write it. The StrandTest example sketch is excellent at initially testing your wiring, and in particular the rainbow effect is my go-to display.
+I haven't mentioned it thus far, but by now I had some [code written in the Arduino IDE](https://github.com/fraz3alpha/led-glow-jar/blob/master/esp8266/arduino-ide/led-glow-jar.ino) for the ESP board to flash the LEDs in various patterns to check everything worked. The code uses the [Adafruit_NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel), which just works, so why re-write it. The StrandTest example sketch is excellent at initially testing your wiring, and in particular the rainbow effect is my go-to display.
 
 You can install the library via the Arduino IDE's library manager.
 
